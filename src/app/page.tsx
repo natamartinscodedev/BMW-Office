@@ -9,6 +9,10 @@ import NavBar from '@/components/navBar'
 import CarHome from '@/img/bmw-home.png'
 
 export default function Home() {
+  // this values it's be returned api
+  const nameCar = 'BMW 320i'
+  const infoCar = 'Taxa 0% A.M., 60% entrada + saldo em 24 meses.*'
+
   useEffect(() => {
     AOS.init()
   }, [])
@@ -30,10 +34,10 @@ export default function Home() {
               <div className="box_info-car-navbar">
                 <div>
                   <h2 data-aos="fade-right" data-aos-delay="200">
-                    BMW 320i
+                    {nameCar}
                   </h2>
                   <p data-aos="fade-right" data-aos-delay="300">
-                    Taxa 0% A.M., 60% entrada + saldo em 24 meses.*
+                    {infoCar}
                   </p>
                   <p data-aos="fade-right" data-aos-delay="400">
                     Consulte condições.
