@@ -1,16 +1,23 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '@/img/bmw-logo.svg'
 import Link from 'next/link'
+import { MapPin, MenuIcon, Search, ShoppingCart, User, X } from 'lucide-react'
 
 const NavBar = () => {
+  const [openMenu, setOpenMenu] = useState(false)
+
+  const handleClick = () => {
+    setOpenMenu(!openMenu)
+  }
+
   return (
     <>
       <nav className="container-navbar">
         <div className="box_navbar-links">
-          <Link href="/">
+          <Link href="/" id="logo-bmw">
             <Image src={Logo} alt="" />
           </Link>
           <ul className="card-links-navbar">
@@ -33,18 +40,59 @@ const NavBar = () => {
         </div>
         <ul className="card-btns-navbar">
           <li>
-            <Link href="#">use</Link>
+            <Link href="#">
+              <User />
+            </Link>
           </li>
           <li>
-            <Link href="#">pay</Link>
+            <Link href="#">
+              <ShoppingCart />
+            </Link>
+          </li>
+          <li id="location-icon">
+            <Link href="#">
+              <MapPin />
+            </Link>
           </li>
           <li>
-            <Link href="#">location</Link>
+            <Link href="#">
+              <Search />
+            </Link>
           </li>
-          <li>
-            <Link href="#">search</Link>
-          </li>
+          <button id="menu_mobile" onClick={() => handleClick()}>
+            {openMenu === true ? (
+              <X color="white" />
+            ) : (
+              <MenuIcon color="white" />
+            )}
+          </button>
         </ul>
+        {openMenu === true && (
+          <div className="modal-menu">
+            <ul
+              data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="500"
+            >
+              <li>
+                <Link href="#">Modelos</Link>
+              </li>
+              <li>
+                <Link href="#">Configure o seu</Link>
+              </li>
+              <li>
+                <Link href="#">Compre Online</Link>
+              </li>
+              <li>
+                <Link href="#">Descubra a BMW</Link>
+              </li>
+              <li>
+                <Link href="#">Recall</Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
     </>
   )

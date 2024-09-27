@@ -18,3 +18,10 @@ ul {
 a {
   text-decoration: none;
 }
+
+// Responsive
+@media (max-width: 750px) {
+  .container {
+    max-width: 100%;
+  }
+}

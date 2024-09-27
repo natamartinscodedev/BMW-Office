@@ -1,37 +1,51 @@
 header {
   width: 100%;
   height: 100vh;
+  background: linear-gradient(-90deg, #ffffff00 30%, #000000 95%);
+  z-index: -1;
+}
 
-  background-image: url(../img/bmw-home.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 100;
+.card_img-home-bg {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+
+  img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
 }
 
 .container_nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 2rem;
+  z-index: 100;
 }
 
 .gradient-background {
-  width: 40%;
-  height: 100vh;
   position: absolute;
   top: 0;
+  left: 0;
   bottom: 0;
-
-  background: linear-gradient(-90deg, #ffffff00 30%, #000000 70%);
-  z-index: -1;
+  width: 40%;
+  height: 100vh;
 }
 
 .box_navbar-links {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .container-navbar {
+  z-index: 100;
   width: 100%;
   display: flex;
   align-items: center;
@@ -46,23 +60,36 @@ header {
 
     li {
       color: #f1f1f1;
-      a {
-        color: #f1f1f1;
-        padding-bottom: 3rem;
-        border-bottom: 3px solid transparent;
-        padding: 10px 10px 3.2rem 10px;
-        &:hover {
-          color: #747474;
-          border-color: #747474;
-        }
-      }
     }
   }
 }
 
-// .container_home-navbar {
+.card-links-navbar li {
+  a {
+    color: #f1f1f1;
+    padding-bottom: 5.2rem;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: #747474;
+      border-color: #747474;
+    }
+  }
+  padding: 10px 10px 3.2rem 10px;
+}
 
-// }
+.card-btns-navbar li {
+  a {
+    color: #f1f1f1;
+    padding-bottom: 3rem;
+    &:hover {
+      color: #747474;
+    }
+  }
+}
+
+.container_home-navbar {
+  z-index: 10;
+}
 
 .box_info-navbar {
   width: 100%;
@@ -91,4 +118,131 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+#menu_mobile {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-menu {
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 800;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+
+    max-width: 50%;
+    width: 100%;
+    height: 100vh;
+    background: #383838;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      a {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 1.2rem;
+
+        &:hover {
+          color: #747474;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .box_navbar-links ul {
+    display: none;
+  }
+  #menu_mobile {
+    display: flex;
+    z-index: 900;
+  }
+  #location-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .container_nav-bar {
+    padding: 1rem;
+    margin-bottom: 5rem;
+  }
+
+  .container-navbar {
+    padding-bottom: 1rem;
+  }
+
+  .box_info-navbar {
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffffff00 20%, #000000 80%);
+  }
+
+  #logo-bmw {
+    width: 2.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-btns-navbar li {
+    a {
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+
+  .box_info-car-navbar {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card_img-home-bg {
+    img {
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
 }
