@@ -1,0 +1,24 @@
+.box_search-car {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 5rem 0px;
+}
+
+.box_cads-serach {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+@media (max-width: 750px) {
+  .box_cads-serach {
+    flex-direction: column;
+  }
+}

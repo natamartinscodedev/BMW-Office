@@ -1,0 +1,17 @@
+.container_links {
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    a {
+      color: #333;
+
+      &:hover {
+        color: #b4b4b4;
+      }
+    }
+    a:nth-child(1) {
+      color: #888;
+    }
+  }
+}

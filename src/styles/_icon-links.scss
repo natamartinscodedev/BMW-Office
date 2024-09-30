@@ -1,0 +1,14 @@
+.box_icon-links {
+  li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    a {
+      color: #333;
+      &:hover {
+        color: #777;
+        scale: 1.1;
+      }
+    }
+  }
+}
