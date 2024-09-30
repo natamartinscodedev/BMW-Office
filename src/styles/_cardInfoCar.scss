@@ -1,0 +1,14 @@
+.box_info-car {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 90;
+}
+
+@media (max-width: 750px) {
+  .box_info-car {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
